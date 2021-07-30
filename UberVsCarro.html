@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Custo Uber vs Carro</title>
+</head>
+
+<body>
+
+    <script src=js/pegaNumero.js></script>
+
+    <h1>Uber vs Carro</h1>
+
+    <h2>Uber</h2>
+
+    <script>
+        alert("Quer saber se vale a pena ir de Uber ou seu carro? Primeiro vamos calcular o Uber, ok?");
+        mensagem = "Qual a distância percorrida?"
+        var distancia = pegaNumero(); //parseFloat(prompt().replace(",", "."));
+        mensagem = "Qual é a velocidade média?"
+        var velocidadeMedia = pegaNumero();//parseFloat(prompt());
+        var tempoEmHoras = distancia / velocidadeMedia;
+        var tempoEmMinutos = tempoEmHoras * 60;
+        var totalUber = 3 + distancia * 1.7 + tempoEmMinutos * 0.30;
+
+        document.write(`Total R$  ${totalUber.toFixed(2).replace(".", ",")}`);
+
+
+    </script>
+
+
+    <h2>Carro</h2>
+
+
+    <script>
+
+
+        alert("Vamos ver agora indo com seu carro");
+        mensagem = "Quantos KM seu carro faz por litros?"
+        var autonomia = pegaNumero();//parseFloat(prompt());
+        mensagem = "Qual é o preço atual da gasolina?"
+        var precoLitroGasolina = pegaNumero();//parseFloat(prompt().replace(",", "."));
+        var totalGasolina = (distancia / autonomia) * precoLitroGasolina;
+        mensagem = "Qual é o valor do estacionamento?"
+        var totalEstacionamento = pegaNumero();//parseFloat(prompt());
+        var totalCarro = totalGasolina + totalEstacionamento;
+
+        document.write(`Gasolina R$ ${totalGasolina.toFixed(2).replace(".", ",")}<br>
+        Estacionamento R$ ${totalEstacionamento.toFixed(2).replace(".", ",")}<br>
+        Total R$ ${totalCarro.toFixed(2).replace(".", ",")}`);
+
+
+    </script>
+
+</body>
+
+</html>
